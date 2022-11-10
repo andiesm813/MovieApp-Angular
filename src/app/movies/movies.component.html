@@ -1,0 +1,74 @@
+<div class="column-layout group">
+  <h5 class="content">
+    Movie Premieres
+  </h5>
+  <div class="row-layout group_1">
+    <div class="column-layout group_2">
+      <div class="column-layout group_3">
+        <h5 class="h5_1">
+          MoviePlex Metropolis
+        </h5>
+        <button igxButton="raised" igxRipple class="button">
+          SHOW SCHEDULE
+        </button>
+      </div>
+    </div>
+  </div>
+  <igx-tabs [disableAnimation]="true" class="tabs">
+    <igx-tab-item [selected]="true" class="tab-item">
+      <igx-tab-content class="row-layout tab-item-content"></igx-tab-content>
+      <igx-tab-header>
+        <igx-icon igxTabHeaderIcon>info</igx-icon>
+        <span igxTabHeaderLabel>Label</span>
+      </igx-tab-header>
+    </igx-tab-item>
+    <igx-tab-item class="tab-item">
+      <igx-tab-content class="row-layout tab-item-content"></igx-tab-content>
+      <igx-tab-header>
+        <igx-icon igxTabHeaderIcon>info</igx-icon>
+        <span igxTabHeaderLabel>Label</span>
+      </igx-tab-header>
+    </igx-tab-item>
+  </igx-tabs>
+  <div class="row-layout group_4">
+    <igx-card type="outlined" *ngFor="let item of movieAppNowPlaying" class="card">
+      <igx-card-media height="180px">
+        <img [src]="item.MoviePoster" class="image" />
+      </igx-card-media>
+      <igx-card-header>
+        <h3 igxCardHeaderTitle>
+          {{ item.Name }}
+        </h3>
+        <h5 igxCardHeaderSubtitle>
+          {{ item.Genre }}
+        </h5>
+      </igx-card-header>
+      <igx-card-content class="body-content">
+        <p class="content">
+          {{ item.Description }}
+        </p>
+      </igx-card-content>
+      <igx-card-actions class="actions-content">
+        <button igxButton="flat" igxRipple class="button_1">
+          Button
+        </button>
+        <button igxButton="icon" igxRipple class="button_2">
+          <igx-icon>
+            favorite
+          </igx-icon>
+        </button>
+        <button igxButton="icon" igxRipple class="button_2">
+          <igx-icon>
+            bookmark
+          </igx-icon>
+        </button>
+        <button igxButton="icon" igxRipple class="button_2">
+          <igx-icon>
+            share
+          </igx-icon>
+        </button>
+      </igx-card-actions>
+    </igx-card>
+  </div>
+</div>
+<div class="column-layout group_5"></div>
